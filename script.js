@@ -24,3 +24,15 @@ console.log(sum)
 }
 
 MyFunction();// calling to use function
+
+let myArray = [123, "Tom C", true];
+for(let element of myArray){
+       console.log(element);
+}
+
+let yourArray = [123, "Tom C", true];
+let i = 0;
+while(i < myArray.length){
+       console.log(myArray[i]);
+       i++;
+}
