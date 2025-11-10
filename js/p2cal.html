@@ -62,54 +62,34 @@
     </div>
 
     <script>
-        let currentInput = "";
-        let firstNumber = null;
-        let operator = null;
+    let expression = ""; 
 
-     
-        function Button(num) {
-            currentInput += num;
-            document.getElementById("output").innerText = currentInput;
-        }
+    function Button(num) {
+        expression += num;
+        document.getElementById("output").innerText = expression;
+    }
 
-      
-        function ButtonPlus() {
-            firstNumber = parseFloat(currentInput);
-            operator = "+";
-            currentInput = "";
-        }
+    function ButtonPlus() {
+        expression += "+";
+        document.getElementById("output").innerText = expression;
+    }
 
-    
-        function ButtonMinus() {
-            firstNumber = parseFloat(currentInput);
-            operator = "-";
-            currentInput = "";
-        }
+    function ButtonMinus() {
+        expression += "-";
+        document.getElementById("output").innerText = expression;
+    }
 
-        function ButtonEq() {
-            const secondNumber = parseFloat(currentInput);
-            let result = 0;
-
-            if (operator === "+") {
-                result = firstNumber + secondNumber;
-            } else if (operator === "-") {
-                result = firstNumber - secondNumber;
-            }
-
+    function ButtonEq() {
+            let result = eval(expression); 
             document.getElementById("output").innerText = result;
-         
-            currentInput = result.toString();
-            firstNumber = null;
-            operator = null;
-        }
+            expression = result.toString(); 
 
-       
-        function ButtonC() {
-            currentInput = "";
-            firstNumber = null;
-            operator = null;
-            document.getElementById("output").innerText = "";
-        }
-    </script>
+    }
+
+    function ButtonC() {
+        expression = "";
+        document.getElementById("output").innerText = "";
+    }
+</script>
 </body>
 </html>

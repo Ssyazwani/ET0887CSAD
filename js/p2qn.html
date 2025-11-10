@@ -8,7 +8,6 @@
             border: 2px dashed #333;
             height: 100px;
             width: 200px;
-            padding: 10px;
         }
     </style>
 </head>
@@ -22,34 +21,19 @@
        ondragstart="handleStartDrag(event)">Hello World</p>
 
     <script>
+        let id = "dragText";
         function handleStartDrag(e) {
-            // Store the id of the element being dragged
-            e.dataTransfer.setData("text/plain", e.target.id);
+            id="dragText";
         }
 
         function handleDragOver(e) {
-            // Allow the drop
             e.preventDefault();
+        
         }
 
         function handleDrop(e) {
             e.preventDefault();
-            // Get the id of the dragged element
-            const data = e.dataTransfer.getData("text/plain");
-            const draggedElement = document.getElementById(data);
-
-            // Extract inner text of paragraph
-            const text = draggedElement.innerText;
-
-            // Create new <li> element
-            const li = document.createElement("li");
-            li.innerText = text;
-
-            // Append the <li> to the drop box
-            e.target.appendChild(li);
-
-            // Remove the original <p> element
-            draggedElement.remove();
+            e.target.appendChild(document.getElementById(id));
         }
     </script>
 </body>

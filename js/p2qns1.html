@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Exercise time!</title>
+    </head>
+    <body>
+        <main>
+            <div id="overview">
+                <h1>HTML & JavaScript are crucial technologies</h1>
+                <p>The web would not work without them...</p>
+            </div>
+            <div id="advantages">
+                <ul>
+                    <li>Flexible</li>
+                    <li>Available</li>
+                    <li>Magical</li>
+                </ul>
+            </div>
+
+            <input type="button" value="Click" onclick="Heading()">
+              <input type="button" value="Click" onclick="secAdvantage()">
+                <input type="button" value="Click" onclick="Division()">
+
+        </main>
+        <script>
+
+
+            function Heading(){
+                const mainHeading = document.getElementsByTagName("h1")[0];
+                mainHeading.style.fontStyle = "italic";
+
+            }
+
+            function secAdvantage(){
+                 const secondAdvantage = document.getElementsByTagName("li").item(1);
+                 secondAdvantage.style.color="blue";
+
+            }
+
+            function Division(){
+                  const advDiv = document.getElementById("advantages");
+                  advDiv.style.fontStyle ="italic";
+
+            }
+        </script>        
+    </body>
+</html>
