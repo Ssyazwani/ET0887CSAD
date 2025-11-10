@@ -16,14 +16,16 @@
          ondragover="handleDragOver(event)">
         Drop here
     </div><br><br>
-
+<div class ="grp" id ="grp">
     <p id="dragText" draggable="true" 
        ondragstart="handleStartDrag(event)">Hello World</p>
 
+        <p id="dragText2" draggable="true" 
+       ondragstart="handleStartDrag(event)">Hello</p>
+</div>
     <script>
-        let id = "dragText";
         function handleStartDrag(e) {
-            id="dragText";
+            e.dataTransfer.setData("id", e.target.id);
         }
 
         function handleDragOver(e) {
@@ -33,7 +35,9 @@
 
         function handleDrop(e) {
             e.preventDefault();
-            e.target.appendChild(document.getElementById(id));
+            const draggedId = e.dataTransfer.getData("id");
+            const draggedElement = document.getElementById(draggedId);
+            e.target.appendChild(draggedElement);
         }
     </script>
 </body>
