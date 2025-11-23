@@ -8,25 +8,34 @@
 <body>
     <h1>My task list</h1>
     <ol id="output"></ol>
-    Name: <input type="text" id="input""><br>
+
+    Name: <input type="text" id="input"><br>
     <input type="button" value="ADD" onclick="add()"><br>
+
     <script>
-        // your function here
 
-        
-    // function add() {
-    //     const input = document.getElementById("input");
-    //     const output = document.getElementById("output");
+    function add() {
+        // Get the input box element
+        const input = document.getElementById("input");
 
-    //     const value = input.value.trim();
-    //     if (value === "") return; // ignore empty entries
+        // Get the output list (the <ol>)
+        const output = document.getElementById("output");
 
-    //     const li = document.createElement("li");
-    //     li.textContent = value;
+        // Get the text typed by the user, removing extra spaces at the ends
+        const value = input.value.trim();
 
-    //     output.appendChild(li);
-    //     input.value = ""; // clear input
-    // }
+        // Create a new <li> element for the list
+        const li = document.createElement("li");
+
+        // Put the typed text inside the <li>
+        li.textContent = value;
+
+        // Add the new <li> to the output list
+        output.appendChild(li);
+
+        // Clear the input box
+        input.value = "";
+    }
 
     </script>
 </body>
