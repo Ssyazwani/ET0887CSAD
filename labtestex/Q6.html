@@ -15,27 +15,24 @@
     <script>
 
     function add() {
-        // Get the input box element
+       
         const input = document.getElementById("input");
-
-        // Get the output list (the <ol>)
+        
         const output = document.getElementById("output");
         // const output = document.querySelector("#input");
 
         // # for id, . for class
-        // Get the text typed by the user, removing extra spaces at the ends
-        const value = input.value.trim();
+        
 
-        // Create a new <li> element for the list
+       
         const li = document.createElement("li");
 
-        // Put the typed text inside the <li>
+       
         li.textContent = value;
 
-        // Add the new <li> to the output list
+        
         output.appendChild(li);
 
-        // Clear the input box
         input.value = "";
 
 
